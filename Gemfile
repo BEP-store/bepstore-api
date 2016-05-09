@@ -3,36 +3,31 @@ ruby '2.2.4'
 
 git_source(:fbf_engine) { |repo_name| "git@github.com:feedbackfruits/#{repo_name}.git" }
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'rails', '~> 4.2.6'
+gem 'mongoid', '~> 5.1.2'
+gem 'jbuilder', '~> 2.3.0'
+gem 'bcrypt', '~> 3.1.10'
+gem 'aasm', '~> 4.1.0'
+gem 'responders', '~> 2.1'
+gem 'enumerize', '~> 1.1.0'
+gem 'rails_admin_import', '~> 1.2'
+gem 'rails_admin', '~> 0.8.1'
+gem 'active_model_serializers', '~> 0.8.0'
+gem 'mongoid_paranoia', '~> 0.2.1'
+gem 'appsignal', '~> 1.0.0'
+gem 'rack-cors', require: 'rack/cors'
+gem 'mongoid-tags', '~> 1.1.0'
+gem 'kaminari', '~> 0.16.3'
+gem 'sidekiq', '~> 4.1'
+gem 'mongoid-observers', '~> 0.1.1'
+gem 'activeresource', '~> 4.0.0'
+gem 'url', '~> 0.3.2', require: false
+gem 'redcarpet'
+gem 'mongoid_rails_migrations'
+gem 'date_validator'
+gem 'pundit'
+gem 'jwt', '~> 1.5.4'
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug', '~> 4.0.5'
