@@ -1,0 +1,51 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+
+Rails:
+  Enabled: true
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Performance/RedundantMerge:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/IfInsideElse:
+  Enabled: false
+
+Style/IndentArray:
+  EnforcedStyle: 'consistent'
+
+Style/ElseAlignment:
+  Enabled: false
+
+Style/IndentationWidth:
+  Enabled: false
+
+Lint/EndAlignment:
+  AlignWith: 'start_of_line'
+
+Lint/DefEndAlignment:
+  AlignWith: 'start_of_line'
