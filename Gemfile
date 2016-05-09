@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
+ruby '2.2.4'
 
+git_source(:fbf_engine) { |repo_name| "git@github.com:feedbackfruits/#{repo_name}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
