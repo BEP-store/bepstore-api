@@ -29,6 +29,8 @@ gem 'pundit'
 gem 'jwt', '~> 1.5.4'
 gem 'httparty'
 
+gem 'bepstore-goals', fbf_engine: 'bepstore-api-goals', branch: 'init'
+
 group :development, :test do
   gem 'byebug', '~> 4.0.5'
   gem 'pry', '~> 0.10.1'
