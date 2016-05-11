@@ -1,10 +1,3 @@
-GIT
-  remote: git@github.com:feedbackfruits/bepstore-api-goals.git
-  revision: c50450ba3b6848bdeca790caeb769b0a251ea2c1
-  branch: init
-  specs:
-    bepstore-goals (0.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -342,7 +335,6 @@ DEPENDENCIES
   activeresource (~> 4.0.0)
   appsignal (~> 1.0.0)
   bcrypt (~> 3.1.10)
-  bepstore-goals!
   byebug (~> 4.0.5)
   codecov
   database_cleaner
