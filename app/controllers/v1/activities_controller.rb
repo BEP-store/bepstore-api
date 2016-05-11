@@ -68,8 +68,7 @@ module V1
     end
 
     def update_params
-      permitted_attributes(resource_class, :update).merge(
-        )
+      permitted_attributes(resource_class, :update).merge
     end
   end
 end
