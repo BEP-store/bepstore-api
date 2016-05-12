@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe V1::ActivitiesController, type: :controller do
-  
   describe 'GET #index' do
     let(:action) do
       proc do
