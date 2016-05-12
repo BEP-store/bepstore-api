@@ -5,6 +5,8 @@
 {<img src="https://david-dm.org/feedbackfruits/bepstore-api.svg" alt="Dependency status" />}[https://david-dm.org/feedbackfruits/bepstore-api]
 {<img src="https://david-dm.org/feedbackfruits/bepstore-api/dev-status.svg" alt="devDependency status" />}[https://david-dm.org/feedbackfruits/bepstore-api#info=devDependencies]
 
+{<img src="https://badge.waffle.io/feedbackfruits/bepstore-api.svg?label=ready&title=Ready" alt="Ready" />}[https://waffle.io/feedbackfruits/bepstore-api]
+{<img src="https://badge.waffle.io/feedbackfruits/bepstore-api.svg?label=in%20progress&title=In%20Progress" alt="In Progress" />}[https://waffle.io/feedbackfruits/bepstore-api]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
