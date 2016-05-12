@@ -1,0 +1,31 @@
+defaults: &defaults
+  :ui_url: https://bepstore.feedbackfruits.com
+  :api_url: https://bepstore-api.feedbackfruits.com
+  :accounts_url: https://bepstore-accounts.feedbackfruits.com
+  :media_url: https://bepstore-media.feedbackfruits.com
+  :accounts_jwt_secret: <%= ENV['ACCOUNTS_JWT_SECRET'] %>
+
+production:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+  :ui_url: https://staging-bepstore.feedbackfruits.com
+  :api_url: https://staging-bepstore-api.feedbackfruits.com
+  :accounts_url: https://staging-bepstore-accounts.feedbackfruits.com
+  :media_url: https://staging-bepstore-media.feedbackfruits.com
+
+development:
+  <<: *defaults
+  :ui_url: <%= ENV["UI_HOST"] || 'http://localhost:4200' %>
+  :api_url: <%= ENV["API_HOST"] || 'http://localhost:3000' %>
+  :accounts_url: <%= ENV["ACCOUNTS_HOST"] || 'http://localhost:3001' %>
+  :media_url: <%= ENV["MEDIA_HOST"] || 'http://localhost:3002' %>
+
+test:
+  <<: *defaults
+  :ui_url: http://localhost:4200
+  :api_url: http://localhost:3000
+  :accounts_url: http://localhost:3001
+  :media_url: http://localhost:3002
+  :accounts_jwt_secret: JWTSecretForTesting

@@ -24,7 +24,7 @@ module BEPStore
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    # config.mongoid.observers = :activity_observer, :bundle_observer
+    config.mongoid.observers = :activity_observer
 
     config.generators.assets = false
     config.generators.helper = false
