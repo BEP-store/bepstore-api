@@ -1,0 +1,17 @@
+default: &defaults
+  push_api_key: "<%= ENV['APPSIGNAL_PUSH_API_KEY'] %>"
+  name: "FeedbackFruits Beta"
+  enable_frontend_error_catching: true
+  frontend_error_catching_path: '/v1/errors'
+
+development:
+  <<: *defaults
+  active: true
+
+staging:
+  <<: *defaults
+  active: true
+
+production:
+  <<: *defaults
+  active: true
