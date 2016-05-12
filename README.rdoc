@@ -1,4 +1,10 @@
-== README
+== BEPStore API
+
+{<img src="https://circleci.com/gh/feedbackfruits/bepstore-api.svg?style=shield" alt="Circle CI" />}[https://circleci.com/gh/feedbackfruits/bepstore-api]
+{<img src="https://codecov.io/gh/feedbackfruits/bepstore-api/branch/bug-fix%231-b/graph/badge.svg" alt="Codecov" />}[https://codecov.io/gh/feedbackfruits/bepstore-api]
+{<img src="https://david-dm.org/feedbackfruits/bepstore-api.svg" alt="Dependency status" />}[https://david-dm.org/feedbackfruits/bepstore-api]
+{<img src="https://david-dm.org/feedbackfruits/bepstore-api/dev-status.svg" alt="devDependency status" />}[https://david-dm.org/feedbackfruits/bepstore-api#info=devDependencies]
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
