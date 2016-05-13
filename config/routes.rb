@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  namespace :v1, except: [:new, :edit], format: :json do
+    get :activities, to: 'activities#find', constraints: ->(request) { request.params.key? :ids }
+    resources :activities, only: [:show, :index]
+
+    namespace :engines do
+      BEPStore.constants.each do |engine|
+        mount BEPStore.const_get(engine)::Engine => "/#{engine.to_s.underscore}" unless engine == :Application
+      end
+    end
+  end
+
+  root to: redirect { Rails.application.config_for(:app)[:ui_url] }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

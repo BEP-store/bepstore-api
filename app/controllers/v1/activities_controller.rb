@@ -6,7 +6,7 @@ module V1
     before_action :find_activity, only: [:show, :update, :destroy]
 
     def index
-      @activities = @activities.unbundled.where(:_type.nin => %w(View Folder Text)) if resource_name == 'activity'
+      @activities = resource_class
       @activities = @activities.desc(:created_at).page(page).per(per_page)
 
       render json: @activities, root: root, meta: {
@@ -17,6 +17,7 @@ module V1
     end
 
     def find
+      @activities = resource_class.find(params[:ids])
       render json: @activities, root: root
     end
 
@@ -25,7 +26,7 @@ module V1
     end
 
     def create
-      @activity = resource_class.new create_params
+      @activity = resource_class.new create
       if @activity.save
         render json: @activity, root: root, status: :created
       else
@@ -57,6 +58,10 @@ module V1
 
     def update_params
       permitted_attributes(resource_class, :update)
+    end
+
+    def find_activity
+      @activity = resource_class.find(params[:id])
     end
   end
 end

@@ -1,7 +1,5 @@
 shared_examples_for 'ActivitiesController' do
   # Make sure the following contexts are added in the specs
-  #   include_context 'authentication'
-  #   include_context 'group'
 
   let!(:type) { activity._type.underscore }
 
@@ -27,6 +25,14 @@ shared_examples_for 'ActivitiesController' do
         get :show, id: activity2.id
       end
     end
+
+    describe 'should be succesful' do
+      before do
+        action.call
+      end
+
+      it { expect(response).to have_http_status(:success) }
+    end
   end
 
   describe 'POST #create' do
@@ -38,22 +44,18 @@ shared_examples_for 'ActivitiesController' do
   end
 
   describe 'PUT #update' do
-    describe 'with the current user' do
       let(:action) do
         proc do
           put :update, id: activity.id, type => params
         end
       end
-    end
   end
 
   describe 'DELETE #destroy' do
-    describe 'with the current user' do
       let(:action) do
         proc do
           delete :destroy, id: activity.id
         end
       end
-    end
   end
 end
