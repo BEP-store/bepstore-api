@@ -1,5 +1,3 @@
-require: rubocop-rspec
-
 AllCops:
   Exclude:
     - 'vendor/**/*'
@@ -24,9 +22,6 @@ Performance/RedundantMerge:
   Enabled: false
 
 Rails/HasAndBelongsToMany:
-  Enabled: false
-
-RSpec/FilePath:
   Enabled: false
 
 Style/Documentation:
