@@ -10,4 +10,5 @@ class Activity
   def self.engine
     name.underscore.pluralize
   end
+  # :nocov:
 end

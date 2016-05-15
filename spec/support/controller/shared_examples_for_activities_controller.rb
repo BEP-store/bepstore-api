@@ -1,5 +1,7 @@
 shared_examples_for 'ActivitiesController' do
   # Make sure the following contexts are added in the specs
+  let!(:activity) { FactoryGirl.create(:activity) }
+  let!(:activity2) { FactoryGirl.create(:activity) }
 
   describe 'GET #index' do
     let(:action) do
