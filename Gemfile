@@ -29,6 +29,8 @@ gem 'pundit'
 gem 'jwt', '~> 1.5.4'
 gem 'httparty'
 
+gem 'bepstore-goals', fbf_engine: 'bepstore-api-goals', branch: 'init'
+
 group :development, :test do
   gem 'byebug', '~> 4.0.5'
   gem 'pry', '~> 0.10.1'
@@ -37,8 +39,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4.0'
   gem 'mongoid-rspec', '~> 3.0.0'
   gem 'dotenv-rails', '~> 2.0.2'
-  gem 'rubocop', '~> 0.37.0', require: false
-  gem 'rubocop-rspec', '~> 1.3.1'
+  gem 'rubocop', '~> 0.39.0', require: false
+  gem 'rubocop-rspec', '~> 1.4.1'
   gem 'duktape'
 end
 
