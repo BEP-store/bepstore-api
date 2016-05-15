@@ -1,8 +1,6 @@
 shared_examples_for 'ActivitiesController' do
   # Make sure the following contexts are added in the specs
 
-  let!(:type) { activity._type.underscore }
-
   describe 'GET #index' do
     let(:action) do
       proc do
