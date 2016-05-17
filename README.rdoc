@@ -1,28 +1,43 @@
-== README
+== BEPStore API
+<<<<<<< HEAD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+{<img src="https://circleci.com/gh/feedbackfruits/bepstore-api.svg?style=shield" alt="Circle CI" />}[https://circleci.com/gh/feedbackfruits/bepstore-api]
+{<img src="https://codecov.io/gh/feedbackfruits/bepstore-api/branch/bug-fix%231-b/graph/badge.svg" alt="Codecov" />}[https://codecov.io/gh/feedbackfruits/bepstore-api]
+{<img src="https://david-dm.org/feedbackfruits/bepstore-api.svg" alt="Dependency status" />}[https://david-dm.org/feedbackfruits/bepstore-api]
+{<img src="https://david-dm.org/feedbackfruits/bepstore-api/dev-status.svg" alt="devDependency status" />}[https://david-dm.org/feedbackfruits/bepstore-api#info=devDependencies]
 
-Things you may want to cover:
+{<img src="https://badge.waffle.io/feedbackfruits/bepstore-api.svg?label=ready&title=Ready" alt="Ready" />}[https://waffle.io/feedbackfruits/bepstore-api]
+{<img src="https://badge.waffle.io/feedbackfruits/bepstore-api.svg?label=in%20progress&title=In%20Progress" alt="In Progress" />}[https://waffle.io/feedbackfruits/bepstore-api]
+=======
+>>>>>>> c0d45b3a97cdaa7caaf61d0b1b34d21a5bbdb1d7
 
-* Ruby version
+{<img src="https://circleci.com/gh/feedbackfruits/bepstore-api.svg?style=shield" alt="Circle CI" />}[https://circleci.com/gh/feedbackfruits/bepstore-api]
+{<img src="https://codecov.io/gh/feedbackfruits/bepstore-api/branch/bug-fix%231-b/graph/badge.svg" alt="Codecov" />}[https://codecov.io/gh/feedbackfruits/bepstore-api]
+{<img src="https://david-dm.org/feedbackfruits/bepstore-api.svg" alt="Dependency status" />}[https://david-dm.org/feedbackfruits/bepstore-api]
+{<img src="https://david-dm.org/feedbackfruits/bepstore-api/dev-status.svg" alt="devDependency status" />}[https://david-dm.org/feedbackfruits/bepstore-api#info=devDependencies]
 
-* System dependencies
+{<img src="https://badge.waffle.io/feedbackfruits/bepstore-api.svg?label=ready&title=Ready" alt="Ready" />}[https://waffle.io/feedbackfruits/bepstore-api]
+{<img src="https://badge.waffle.io/feedbackfruits/bepstore-api.svg?label=in%20progress&title=In%20Progress" alt="In Progress" />}[https://waffle.io/feedbackfruits/bepstore-api]
 
-* Configuration
+This README should document whatever steps are necessary to get the application up and running.
 
-* Database creation
+* Ruby version: <tt>2.2.4</tt>
+* System dependencies: <tt>?</tt>
+* Configuration: <tt>git clone git@github.com:feedbackfruits/bepstore-api.git && cd bepstore-api && npm install && bower install</tt>
+* Database creation: <tt>sudo apt-get install mongodb</tt> (Ubuntu 15.10)
+* Database initialization: <tt>rake db:setup</tt>
 
-* Database initialization
+=== Testing
+We are using rspec in combination with rubocop. We strive to achieve and maintain a 100% code coverage.
 
-* How to run the test suite
+Running rspec:
+<tt>bundle exec rspec spec</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+Running Rubocop:
+<tt>bundle exec rake rubocop</tt>
 
-* Deployment instructions
+Auto fixing rubocop failures:
+<tt>bundle exec rake rubocop:auto_correct</tt>
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== Deployment
+@steffansluis
