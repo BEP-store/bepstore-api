@@ -1,11 +1,7 @@
 class Role
-  include Mongoid::Document
-  include Mongoid::Timestamps
-  include Mongoid::Paranoia
-
   field :title, type: String
 
-  belongs_to :group
+  has_one :group
 
   validates :group, presence: true
 end

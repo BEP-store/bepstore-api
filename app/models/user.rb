@@ -1,8 +1,6 @@
 class User
-  include Mongoid::Document
-  include Mongoid::Timestamps
-  include Mongoid::Paranoia
-
+  include ActiveModel::Model
+  
   has_many :activities
 
   field :id, type: Integer

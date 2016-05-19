@@ -1,6 +1,6 @@
-class Activity
-  include Mongoid::Document
-  include Mongoid::Timestamps
+require 'active_record'
+
+class Activity < ActiveRecord::Base
 
   belongs_to :user
 
