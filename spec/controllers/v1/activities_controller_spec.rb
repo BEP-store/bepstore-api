@@ -54,40 +54,4 @@ RSpec.describe V1::ActivitiesController, type: :controller do
       end
     end
   end
-
-  # describe 'POST #create' do
-  #   let(:action) do
-  #     proc do
-  #       post :create, type => params
-  #     end
-  #   end
-
-  #   describe 'when enrolled or owner' do
-
-  #     describe 'should return the activity' do
-  #       before { action.call }
-
-  #       it { expect(JSON.parse(response.body)['activity']['id']).to eq(activity2.id.to_s) }
-  #     end
-  #   end
-
-  # end
-  #
-
-  # describe 'POST #create' do
-  #   let(:action) do
-  #     proc do
-  #       post :create
-  #     end
-  #   end
-
-  #   describe 'when enrolled or owner' do
-
-  #     describe 'should return the activity' do
-  #       before { action.call }
-
-  #       it { expect(JSON.parse(response.body)['activity']['id']).to eq(activity2.id.to_s) }
-  #     end
-  #   end
-  # end
 end
