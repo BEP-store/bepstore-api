@@ -6,6 +6,11 @@ class User
   has_many :activities
 
   field :id, type: Integer
+  field :name, type: String
+  field :account_id, type: String
+
+  validates :name, presence: true
+
   def enroll!(group, role)
   end
 
