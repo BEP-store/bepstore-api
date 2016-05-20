@@ -9,7 +9,8 @@ class Activity < ActiveRecord::Base
 
   has_and_belongs_to_many :groups
 
-  field :engine, type: String, default: -> { self.class.engine }, pre_processed: true
+  # String engine
+  # field :engine, type: String, default: -> { self.class.engine }, pre_processed: true
 
   validates :engine, presence: true
 

@@ -26,8 +26,8 @@ module BEPStore
 
     # config.mongoid.observers = :activity_observer, :bundle_observer
 
-    config.generators.assets = false
-    config.generators.helper = false
+    # config.generators.assets = false
+    # config.generators.helper = false
 
     config.middleware.insert_before 0, 'Rack::Cors' do
       allow do

@@ -1,5 +1,5 @@
-class Role
-  field :title, type: String
+class Role < ActiveRecord::Base
+  # field :title, type: String
 
   has_one :group
 

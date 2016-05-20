@@ -1,9 +1,9 @@
-class User
+class User < ActiveRecord::Base
   include ActiveModel::Model
   
   has_many :activities
 
-  field :id, type: Integer
+  # field :id, type: Integer
   def enroll!(group, role)
   end
 
