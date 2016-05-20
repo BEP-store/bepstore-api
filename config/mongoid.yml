@@ -19,7 +19,7 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: <%= ENV['database'] || 'feedbackfruits_api_development' %>
+      database: <%= ENV['database'] || 'bepstore_api_development' %>
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -142,7 +142,7 @@ development:
 test:
   clients:
     default:
-      database: <%= ENV['database'] || 'feedbackfruits_api_test' %>
+      database: <%= ENV['database'] || 'bepstore_api_test' %>
       hosts:
         - <%= ENV['MONGODB_HOST'] || 'localhost:27017' %>
   options:
