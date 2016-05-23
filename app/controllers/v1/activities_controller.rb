@@ -26,7 +26,7 @@ module V1
     end
 
     def create
-      @activity = resource_class.new create
+      @activity = resource_class.new create_params
       if @activity.save
         render json: @activity, root: root, status: :created
       else
