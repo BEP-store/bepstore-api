@@ -7,6 +7,7 @@ class User
 
   field :id, type: Integer
   field :name, type: String
+  field :bio, type: String
   field :account_id, type: String
 
   validates :name, presence: true
