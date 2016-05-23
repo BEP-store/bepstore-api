@@ -6,7 +6,7 @@ module V1
     before_action :find_activity, only: [:show, :update, :destroy]
 
     def index
-      @activities = resource_class
+      @activities = policy_scope(resource_class)
       @activities = @activities.desc(:created_at).page(page).per(per_page)
 
       render json: @activities, root: root, meta: {
