@@ -57,7 +57,7 @@ module V1
     end
 
     def update_params
-      permitted_attributes(resource_class, :update)
+      params.require(:goal).permit(:title, :description, :status, :parents)
     end
 
     def find_activity
