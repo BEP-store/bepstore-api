@@ -9,6 +9,8 @@ module V1
       @activities = policy_scope(resource_class)
       @activities = @activities.desc(:created_at).page(page).per(per_page)
 
+      authorize @activities
+
       render json: @activities, root: root, meta: {
         page: page,
         per_page: per_page,

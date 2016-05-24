@@ -12,7 +12,8 @@ module UsersHelper
   end
 
   def signed_in?
-    access_token_valid? && current_user.present?
+    # access_token_valid? &&
+    current_user.present?
   end
 
   def signed_in_user
