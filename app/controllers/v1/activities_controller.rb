@@ -27,6 +27,7 @@ module V1
 
     def create
       @activity = resource_class.new create_params
+      puts @activity.title
       if @activity.save
         render json: @activity, root: root, status: :created
       else
@@ -53,7 +54,8 @@ module V1
     private
 
     def create_params
-      permitted_attributes(resource_class, :create)
+      params.require(:goal).permit(:title, :description, :status, :parents)
+      #permitted_attributes(resource_class, :create)
     end
 
     def update_params
