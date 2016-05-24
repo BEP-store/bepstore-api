@@ -1,9 +1,9 @@
 GIT
   remote: git@github.com:feedbackfruits/bepstore-api-goals.git
-  revision: b7a8c27baa5d8eee10318b3fcbe104ff5dfa4408
+  revision: b14ffc2d8d63438fd990d7130ae4ff6e2832d675
   branch: master
   specs:
-    bepstore-goals (0.0.1)
+    bepstore-goals (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -92,7 +92,7 @@ GEM
     enumerize (1.1.1)
       activesupport (>= 3.2)
     erubis (2.7.0)
-    execjs (2.6.0)
+    execjs (2.7.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.5.0)
@@ -130,9 +130,9 @@ GEM
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
-    mime-types (3.0)
+    mime-types (3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0221)
+    mime-types-data (3.2016.0521)
     mini_portile2 (2.0.0)
     minitest (5.9.0)
     mongo (2.2.5)
@@ -142,7 +142,7 @@ GEM
       mongo (~> 2.1)
       origin (~> 2.2)
       tzinfo (>= 0.3.37)
-    mongoid-compatibility (0.3.1)
+    mongoid-compatibility (0.4.0)
       activesupport
       mongoid (>= 2.0)
     mongoid-observers (0.1.1)
@@ -254,7 +254,7 @@ GEM
     rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
-    rspec-instafail (0.5.0)
+    rspec-instafail (1.0.0)
       rspec
     rspec-mocks (3.4.1)
       diff-lcs (>= 1.2.0, < 2.0)
