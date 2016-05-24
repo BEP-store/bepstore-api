@@ -54,7 +54,6 @@ module V1
 
     def create_params
       params.require(:goal).permit(:title, :description, :status, :parents)
-      # permitted_attributes(resource_class, :create)
     end
 
     def update_params
