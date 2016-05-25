@@ -3,10 +3,12 @@ module V1
     include ActivitiesHelper
     include PaginationHelper
 
+    before_action :find_parent, only: :index
     before_action :find_activity, only: [:show, :update, :destroy]
 
     def index
       @activities = resource_class
+      @activities = @activities.in(parent_ids: @activity.id) if defined?(@activity)
       @activities = @activities.desc(:created_at).page(page).per(per_page)
 
       render json: @activities, root: root, meta: {
@@ -62,6 +64,10 @@ module V1
 
     def find_activity
       @activity = resource_class.find(params[:id])
+    end
+
+    def find_parent
+      @parent = Activity.find(params[:activity_id]) if params.key?(:activity_id)
     end
   end
 end
