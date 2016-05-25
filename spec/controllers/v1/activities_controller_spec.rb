@@ -12,6 +12,7 @@ RSpec.describe V1::ActivitiesController, type: :controller do
         get :index
       end
     end
+    it_behaves_like 'authenticated_action'
     describe 'should return the activities' do
        before { action.call }
 

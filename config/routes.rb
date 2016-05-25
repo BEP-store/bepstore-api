@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :v1, except: [:new, :edit], format: :json do
     get :activities, to: 'activities#find', constraints: ->(request) { request.params.key? :ids }
-    resources :activities, only: [:create]
+    resources :activities#, only: [:show, :index]
 
     namespace :engines do
       BEPStore.constants.each do |engine|
