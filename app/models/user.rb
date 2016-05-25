@@ -7,6 +7,7 @@ class User
 
   field :id, type: Integer
   field :name, type: String
+  field :admin, type: Boolean, default: false
   field :bio, type: String
   field :account_id, type: String
 
@@ -16,5 +17,11 @@ class User
   end
 
   def enrolled?(group)
+  end
+
+  def self.create_from_account!(account)
+    user = User.new(name: account[:name], admin: false, account_id: account[:id])
+    user.save!
+    user
   end
 end
