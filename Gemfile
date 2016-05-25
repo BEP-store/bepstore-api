@@ -49,7 +49,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.0.1'
   gem 'timecop', '~> 0.7.4'
   gem 'faker', '~> 1.4.3'
-  gem 'webmock', '~> 1.22.3'
+  gem 'webmock', '~> 2.0.3'
   gem 'simplecov', '~> 0.11.1', require: false
   gem 'codecov', require: false
   gem 'rspec_junit_formatter', '0.2.2'

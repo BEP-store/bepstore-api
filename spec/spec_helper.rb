@@ -16,6 +16,7 @@
 # users commonly want.
 require 'simplecov'
 require 'codecov'
+require 'webmock/rspec'
 require 'sidekiq/testing'
 
 Sidekiq::Testing.inline!
