@@ -5,6 +5,7 @@ module V1
     skip_after_action :verify_policy_scoped, only: :current
 
     def find
+      # binding.pry
       @users = policy_scope(User).find(params[:ids])
       authorize User
       render json: @users
@@ -23,20 +24,14 @@ module V1
     def create
       @user = User.new permitted_attributes(User)
       authorize @user
-      if @user.save
-        render json: @user, status: :created
-      else
-        render json: { errors: @user.errors }, status: :unprocessable_entity
-      end
+      @user.save!
+      render json: @user, status: :created
     end
 
     def update
       authorize @user
-      if @user.update permitted_attributes(@user)
-        render json: @user
-      else
-        render json: { errors: @user.errors }, status: :unprocessable_entity
-      end
+      @user.update! permitted_attributes(@user)
+      render json: @user
     end
 
     private

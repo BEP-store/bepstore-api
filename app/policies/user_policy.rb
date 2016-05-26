@@ -1,6 +1,6 @@
 class UserPolicy < ApplicationPolicy
   def find?
-    false
+    true
   end
 
   def create?
@@ -8,7 +8,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    false
+    true
   end
 
   def current?
@@ -16,11 +16,12 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
+    # binding.pry
     record == user
   end
 
   def permitted_attributes
-    [:name, :email, :password]
+    [:name, :bio]
   end
 
   class Scope < Scope
