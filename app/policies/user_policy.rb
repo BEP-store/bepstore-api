@@ -16,7 +16,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    # binding.pry
     record == user
   end
 

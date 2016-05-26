@@ -5,7 +5,6 @@ module V1
     skip_after_action :verify_policy_scoped, only: :current
 
     def find
-      # binding.pry
       @users = policy_scope(User).find(params[:ids])
       authorize User
       render json: @users

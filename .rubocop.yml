@@ -24,6 +24,9 @@ Performance/RedundantMerge:
 Rails/HasAndBelongsToMany:
   Enabled: false
 
+RSpec/AnyInstance:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 

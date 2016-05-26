@@ -26,14 +26,6 @@ shared_examples_for 'ActivitiesController' do
         get :show, id: activity2.id
       end
     end
-
-    describe 'should be succesful' do
-      before do
-        action.call
-      end
-
-      it { expect(response).to have_http_status(:success) }
-    end
   end
 
   describe 'POST #create' do

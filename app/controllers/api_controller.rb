@@ -8,14 +8,19 @@ class ApiController < ApplicationController
   after_action :verify_authorized
 
   rescue_from Pundit::NotAuthorizedError, with: :rescue_from_not_authorized
+  rescue_from Pundit::NotDefinedError, with: :rescue_from_not_defined
   rescue_from Mongoid::Errors::Validations, with: :rescue_from_validation_error
 
   private
 
   def rescue_from_not_authorized(exception)
-    policy_name = exception.policy.class.to_s.underscore
+    render json: { errors: [exception.message] }, status: :forbidden
+    false
+  end
 
-    flash[:warning] = t "#{policy_name}.#{exception.query}", scope: 'pundit', default: :default
+  def rescue_from_not_defined(exception)
+    render json: { errors: [exception.message] }, status: 501
+    false
   end
 
   def rescue_from_validation_error(exception)
