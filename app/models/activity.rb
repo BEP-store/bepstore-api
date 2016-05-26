@@ -13,9 +13,7 @@ class Activity
 
   validates :engine, presence: true
 
-  # :nocov:
   def self.engine
     name.underscore.pluralize
   end
-  # :nocov:
 end

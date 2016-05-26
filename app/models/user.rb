@@ -5,7 +5,6 @@ class User
 
   has_many :activities
 
-  field :id, type: Integer
   field :name, type: String
   field :admin, type: Boolean, default: false
   field :bio, type: String

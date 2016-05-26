@@ -6,8 +6,10 @@ module V1
     before_action :find_activity, only: [:show, :update, :destroy]
 
     def index
-      @activities = resource_class
+      @activities = policy_scope(resource_class)
       @activities = @activities.desc(:created_at).page(page).per(per_page)
+
+      authorize @activities
 
       render json: @activities, root: root, meta: {
         page: page,
@@ -17,16 +19,20 @@ module V1
     end
 
     def find
-      @activities = resource_class.find(params[:ids])
+      @activities = policy_scope(resource_class).find(params[:ids])
+      authorize Activity
+
       render json: @activities, root: root
     end
 
     def show
+      authorize @activity
       render json: @activity, root: root
     end
 
     def create
-      @activity = resource_class.new create_params
+      @activity = policy_scope(resource_class).new create_params
+      authorize @activity
       if @activity.save
         render json: @activity, root: root, status: :created
       else
@@ -61,7 +67,7 @@ module V1
     end
 
     def find_activity
-      @activity = resource_class.find(params[:id])
+      @activity = policy_scope(resource_class).find(params[:id])
     end
   end
 end

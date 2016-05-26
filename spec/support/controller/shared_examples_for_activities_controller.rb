@@ -1,4 +1,6 @@
 shared_examples_for 'ActivitiesController' do
+  include_context 'authentication'
+
   let!(:activity) { FactoryGirl.create(:activity) }
   let!(:activity2) { FactoryGirl.create(:activity) }
 
@@ -23,14 +25,6 @@ shared_examples_for 'ActivitiesController' do
       proc do
         get :show, id: activity2.id
       end
-    end
-
-    describe 'should be succesful' do
-      before do
-        action.call
-      end
-
-      it { expect(response).to have_http_status(:success) }
     end
   end
 

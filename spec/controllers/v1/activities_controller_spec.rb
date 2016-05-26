@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe V1::ActivitiesController, type: :controller do
-  let!(:activity) { FactoryGirl.create(:activity) }
-  let!(:activity2) { FactoryGirl.create(:activity) }
+  include_context 'authentication'
 
+  let!(:activity) { FactoryGirl.create(:activity, user: user) }
+  let!(:activity2) { FactoryGirl.create(:activity) }
   it_behaves_like 'ActivitiesController'
 
   describe 'GET #index' do
@@ -12,6 +13,7 @@ RSpec.describe V1::ActivitiesController, type: :controller do
         get :index
       end
     end
+    it_behaves_like 'authenticated_action'
     describe 'should return the activities' do
        before { action.call }
 
