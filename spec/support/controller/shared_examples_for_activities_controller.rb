@@ -28,9 +28,7 @@ shared_examples_for 'ActivitiesController' do
     end
 
     describe 'should be succesful' do
-      it_behaves_like 'authenticated_action'
       before do
-        # request.headers['AUTHORIZATION'] = "Bearer #{user_access_token}"
         action.call
       end
 

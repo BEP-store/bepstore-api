@@ -4,11 +4,11 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def find?
-    false
+    true
   end
 
   def show?
-    false
+    true
   end
 
   def create?
