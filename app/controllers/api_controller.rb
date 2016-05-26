@@ -13,9 +13,9 @@ class ApiController < ApplicationController
   private
 
   def rescue_from_not_authorized(exception)
-  	policy_name = exception.policy.class.to_s.underscore
+    policy_name = exception.policy.class.to_s.underscore
 
-    flash[:warning] = t "#{policy_name}.#{exception.query}", scope: "pundit", default: :default
+    flash[:warning] = t "#{policy_name}.#{exception.query}", scope: 'pundit', default: :default
   end
 
   def rescue_from_validation_error(exception)
