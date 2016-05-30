@@ -20,7 +20,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    [:name, :bio]
+    [:name, :bio, :account_id]
   end
 
   class Scope < Scope

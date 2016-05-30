@@ -1,6 +1,7 @@
 class Activity
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Attributes::Dynamic
 
   belongs_to :user
 
@@ -11,7 +12,7 @@ class Activity
 
   field :engine, type: String, default: -> { self.class.engine }, pre_processed: true
 
-  validates :engine, presence: true
+  # validates :engine, presence: true
 
   def self.engine
     name.underscore.pluralize
