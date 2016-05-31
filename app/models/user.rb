@@ -3,7 +3,7 @@ class User
   include Mongoid::Timestamps
   include Mongoid::Paranoia
 
-  has_many :activities
+  has_and_belongs_to_many :activities
 
   field :name, type: String
   field :admin, type: Boolean, default: false

@@ -33,37 +33,32 @@ module V1
     def create
       @activity = policy_scope(resource_class).new create_params
       authorize @activity
-      if @activity.save
-        render json: @activity, root: root, status: :created
-      else
-        render json: { errors: @activity.errors }, status: :unprocessable_entity
-      end
+      @activity.save!
+      render json: @activity, root: root, status: :created
     end
 
     def update
-      if @activity.update update_params
-        render json: @activity, root: root
-      else
-        render json: { errors: @activity.errors }, status: :unprocessable_entity
-      end
+      authorize @activity
+      @activity.update! update_params
+      render json: @activity, root: root
     end
 
     def destroy
-      if @activity.destroy
-        render json: {}, status: :accepted
-      else
-        render json: { errors: @activity.errors }, status: :unprocessable_entity
-      end
+      authorize @activity
+      @activity.destroy!
+      render json: {}, status: :accepted
     end
 
     private
 
     def create_params
-      params.require(:goal).permit(:title, :description, :status, :parents)
+      permitted_attributes(resource_class).merge(
+        user: current_user
+      )
     end
 
     def update_params
-      params.require(:goal).permit(:title, :description, :status, :parents)
+      permitted_attributes(resource_class)
     end
 
     def find_activity
