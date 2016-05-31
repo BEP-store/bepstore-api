@@ -24,7 +24,7 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    []
+    [:title, :description]
   end
 
   class Scope < Scope
