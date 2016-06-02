@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:feedbackfruits/bepstore-api-goals.git
-  revision: 637998610e51ed0603ff351e174eb3178a2a96d8
+  revision: a446a30c3426f8110af609c03090e083a5c05667
   branch: master
   specs:
     bepstore-goals (0.2.0)
@@ -322,6 +322,9 @@ DEPENDENCIES
   url (~> 0.3.2)
   web-console (~> 2.1.3)
   webmock (~> 2.0.3)
+
+RUBY VERSION
+   ruby 2.2.4p230
 
 BUNDLED WITH
    1.12.4
