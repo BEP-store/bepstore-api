@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails'
 require 'active_job/railtie'
@@ -29,7 +29,7 @@ module BEPStore
     config.generators.assets = false
     config.generators.helper = false
 
-    config.middleware.insert_before 0, 'Rack::Cors' do
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
         resource '*', headers: :any, methods: [:get, :post, :put, :delete, :options]
