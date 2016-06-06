@@ -31,7 +31,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'POST #create' do
     let(:action) do
       proc do
-        post :create,  params: { type => params }
+        post :create, params: { type => params }
       end
     end
   end
@@ -39,7 +39,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'PUT #update' do
       let(:action) do
         proc do
-          put :update,  params: { id: activity.id, type => params }
+          put :update, params: { id: activity.id, type => params }
         end
       end
   end
@@ -47,7 +47,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'DELETE #destroy' do
       let(:action) do
         proc do
-          delete :destroy,  params: { id: activity.id }
+          delete :destroy, params: { id: activity.id }
         end
       end
   end

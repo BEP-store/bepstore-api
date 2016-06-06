@@ -8,7 +8,7 @@ RSpec.describe V1::UsersController, type: :controller do
   describe 'GET #find' do
     let(:action) do
       proc do
-        get :find,  params: { ids: [user.id, user2.id] }
+        get :find, params: { ids: [user.id, user2.id] }
       end
     end
 
@@ -27,7 +27,7 @@ RSpec.describe V1::UsersController, type: :controller do
   describe 'GET #show' do
     let(:action) do
       proc do
-        get :show,  params: { id: user.id }
+        get :show, params: { id: user.id }
       end
     end
 
@@ -59,7 +59,7 @@ RSpec.describe V1::UsersController, type: :controller do
   describe 'POST #create' do
     let(:action) do
       proc do
-        post :create,  params: { user: { name: 'User 1' } }
+        post :create, params: { user: { name: 'User 1' } }
       end
     end
 
@@ -77,7 +77,7 @@ RSpec.describe V1::UsersController, type: :controller do
       let(:failed_action) do
         request.env.delete 'HTTP_AUTHORIZATION'
         proc do
-          post :create,  params: { user: { name: '' } }
+          post :create, params: { user: { name: '' } }
         end
       end
 
@@ -92,7 +92,7 @@ RSpec.describe V1::UsersController, type: :controller do
     describe 'with the current user' do
       let(:action) do
         proc do
-          put :update,  params: { id: user.id, user: { name: 'User 2' } }
+          put :update, params: { id: user.id, user: { name: 'User 2' } }
         end
       end
 
@@ -122,7 +122,7 @@ RSpec.describe V1::UsersController, type: :controller do
     describe 'with a different user' do
       let(:action) do
         proc do
-          put :update,  params: { id: user2.id, user: { name: 'User 2' } }
+          put :update, params: { id: user2.id, user: { name: 'User 2' } }
         end
       end
 
