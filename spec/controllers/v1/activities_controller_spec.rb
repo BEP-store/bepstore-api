@@ -25,7 +25,7 @@ RSpec.describe V1::ActivitiesController, type: :controller do
   describe 'GET #find' do
     let(:action) do
       proc do
-        get :find, ids: [activity.id, activity2.id]
+        get :find, params: { ids: [activity.id, activity2.id] }
       end
     end
 
@@ -44,7 +44,7 @@ RSpec.describe V1::ActivitiesController, type: :controller do
   describe 'GET #show' do
     let(:action) do
       proc do
-        get :show, id: activity2.id
+        get :show, params: { id: activity2.id }
       end
     end
 

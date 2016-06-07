@@ -15,7 +15,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'GET #find' do
     let(:action) do
       proc do
-        get :find, ids: [activity.id, activity2.id]
+        get :find,  params: { ids: [activity.id, activity2.id] }
       end
     end
   end
@@ -23,7 +23,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'GET #show' do
     let(:action) do
       proc do
-        get :show, id: activity2.id
+        get :show,  params: { id: activity2.id }
       end
     end
   end
@@ -31,7 +31,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'POST #create' do
     let(:action) do
       proc do
-        post :create, type => params
+        post :create, params: { type => params }
       end
     end
   end
@@ -39,7 +39,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'PUT #update' do
       let(:action) do
         proc do
-          put :update, id: activity.id, type => params
+          put :update, params: { id: activity.id, type => params }
         end
       end
   end
@@ -47,7 +47,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'DELETE #destroy' do
       let(:action) do
         proc do
-          delete :destroy, id: activity.id
+          delete :destroy, params: { id: activity.id }
         end
       end
   end

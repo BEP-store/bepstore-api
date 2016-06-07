@@ -8,6 +8,7 @@ production: &production
       uri: <%= ENV['MONGODB_URI'] %>
   options:
     raise_not_found_error: false
+    belongs_to_required_by_default: false
 
 staging:
   <<: *production
@@ -25,6 +26,7 @@ development:
       hosts:
         - <%= ENV['MONGODB_HOST'] || 'localhost:27017' %>
       options:
+        belongs_to_required_by_default: false
         # Change the default write concern. (default = { w: 1 })
         # write:
         #   w: 1
@@ -116,6 +118,7 @@ development:
 
   # Configure Mongoid specific options. (optional)
   options:
+    belongs_to_required_by_default: false
     # Includes the root model name in json serialization. (default: false)
     # include_root_in_json: false
 
@@ -147,3 +150,4 @@ test:
         - <%= ENV['MONGODB_HOST'] || 'localhost:27017' %>
   options:
     raise_not_found_error: false
+    belongs_to_required_by_default: false
