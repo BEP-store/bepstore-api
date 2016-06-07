@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:feedbackfruits/bepstore-api-goals.git
-  revision: a446a30c3426f8110af609c03090e083a5c05667
+  revision: 01fe957a172243bb54f0a7cad2d00253c810260f
   branch: master
   specs:
     bepstore-goals (0.2.0)
@@ -159,7 +159,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     minitest (5.9.0)
     mongo (2.2.5)
       bson (~> 4.0)
@@ -182,10 +182,12 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     nio4r (1.2.1)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     parser (2.3.1.2)
       ast (~> 2.2)
+    pkg-config (1.1.7)
     polyglot (0.3.5)
     powerpack (0.1.1)
     pry (0.10.3)
@@ -298,7 +300,7 @@ GEM
       thread_safe (~> 0.1)
     unicode-display_width (1.0.5)
     url (0.3.2)
-    web-console (3.1.1)
+    web-console (3.2.0)
       activemodel (>= 4.2)
       debug_inspector
       railties (>= 4.2)
