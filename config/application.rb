@@ -5,6 +5,7 @@ require 'active_job/railtie'
 require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'active_resource/railtie'
+require 'action_cable/engine'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,7 +25,7 @@ module BEPStore
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    # config.mongoid.observers = :activity_observer, :bundle_observer
+    config.mongoid.observers = :activity_observer #, :bundle_observer
 
     config.generators.assets = false
     config.generators.helper = false

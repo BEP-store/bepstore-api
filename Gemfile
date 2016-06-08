@@ -45,6 +45,11 @@ group :development, :test do
   gem 'duktape'
 end
 
+group :staging, :production do
+  gem 'rails_12factor'
+  gem 'puma', '~> 3.4.0'
+end
+
 group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.5.0'
