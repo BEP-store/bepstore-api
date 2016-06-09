@@ -14,7 +14,7 @@ class ActivityObserver < Mongoid::Observer
   end
 
   def after_update(activity)
-    ActionCable.server.broadcast("goal_#{activity.id}", {
+    ActionCable.server.broadcast("goals", {
       action: 'update',
       id: activity.id,
       type: activity._type

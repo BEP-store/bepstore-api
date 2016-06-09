@@ -2,6 +2,7 @@ class Activity
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Attributes::Dynamic
+  include ActiveModel::Serializers::JSON
 
   belongs_to :user
 

@@ -1,6 +1,4 @@
 class ActivitySerializer < ActiveModel::Serializer
-  embed :ids
-
   attributes :id, :created_at, :type, :engine
 
   has_one :user
