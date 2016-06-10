@@ -4,12 +4,14 @@ class Activity
   include Mongoid::Attributes::Dynamic
   include ActiveModel::Serializers::JSON
 
-  belongs_to :user
+  scope :type, -> (type) { where(_type: type.to_s.classify) }
 
-  has_and_belongs_to_many :parents, inverse_of: :children, class_name: 'Activity', autosave: true
-  has_and_belongs_to_many :children, inverse_of: :parents, class_name: 'Activity'
+  belongs_to :user, index: true
 
-  has_and_belongs_to_many :groups
+  has_and_belongs_to_many :parents, inverse_of: :children, class_name: 'Activity', index: true
+  has_and_belongs_to_many :children, inverse_of: :parents, class_name: 'Activity', index: true
+
+  has_and_belongs_to_many :groups, index: true
 
   field :engine, type: String, default: -> { self.class.engine }, pre_processed: true
 

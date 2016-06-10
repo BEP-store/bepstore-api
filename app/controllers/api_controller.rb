@@ -24,7 +24,7 @@ class ApiController < ApplicationController
   end
 
   def rescue_from_validation_error(exception)
-    render json: { errors: exception.document.errors }, status: :unprocessable_entity
+    render json: exception.document, status: :unprocessable_entity, serializer: ActiveModel::Serializer::ErrorSerializer
     false
   end
 end

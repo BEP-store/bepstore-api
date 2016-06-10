@@ -24,10 +24,10 @@ GIT
 
 GIT
   remote: https://github.com/mongodb/mongoid
-  revision: 7c2ff52a0c5292b8e6bf3a9a29bbb19abae3dd5f
+  revision: 5e6e13fb37e89416066821bd0baf84534ca32d1c
   specs:
     mongoid (6.0.0)
-      activemodel (= 5.0.0.rc1)
+      activemodel (>= 5.0.0.rc1)
       mongo (~> 2.2)
       tzinfo (>= 0.3.37)
 
@@ -100,7 +100,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.0.0)
-    ast (2.2.0)
+    ast (2.3.0)
     bcrypt (3.1.11)
     bson (4.1.1)
     builder (3.2.2)

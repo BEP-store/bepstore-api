@@ -3,7 +3,7 @@ class ActivityPolicy < ApplicationPolicy
     true
   end
 
-  def find?
+  def filter?
     true
   end
 
@@ -24,7 +24,7 @@ class ActivityPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    [:title, :description]
+    []
   end
 
   class Scope < Scope

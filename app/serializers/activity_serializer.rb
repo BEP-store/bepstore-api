@@ -1,11 +1,11 @@
 class ActivitySerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :type, :engine
+  attributes :id, :type, :created_at, :engine
 
   has_one :user
-  has_many :parents, polymorphic: true
-  has_many :children, polymorphic: true
+  has_many :parents
+  has_many :children
 
   def type
-    object._type.underscore
+    object._type.underscore.dasherize
   end
 end

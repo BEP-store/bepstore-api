@@ -7,14 +7,17 @@ class GoalChannel < ApplicationCable::Channel
     # goal.description = 'desc'
     # goal.status = 'pending'
     # goal.save!
-    g = Goal.create(title: '11234', description: "A desc", status: "pending")
-    ActionCable.server.broadcast "goals", g
+    # g = Goal.create(title: '11234', description: "A desc", status: "pending")
+    # # binding.pry
+    # puts g.title
+    # puts g[:_type]
+    # puts 'before'
+    # ActionCable.server.broadcast "goals", g
     # redis.sadd("activity_"+message['id']+"_store", message['id'])
   end
 
   def subscribed
     stream_resource_updates_from "goals"
-    # ActionCable.server.broadcast "goals", "testa"
   end
 
   def unsubscribed

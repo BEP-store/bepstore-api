@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
+ruby '2.3.1'
 
 git_source(:fbf_engine) { |repo_name| "git@github.com:feedbackfruits/#{repo_name}.git" }
 

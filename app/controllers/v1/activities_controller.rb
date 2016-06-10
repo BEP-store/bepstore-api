@@ -1,6 +1,6 @@
 module V1
   class ActivitiesController < ApiController
-    include ActivitiesHelper
+    # include ActivitiesHelper
     include PaginationHelper
 
     before_action :find_activity, only: [:show, :update, :destroy]
@@ -11,42 +11,42 @@ module V1
 
       authorize @activities
 
-      render json: @activities, root: root, meta: {
+      render json: @activities, meta: {
         page: page,
         per_page: per_page,
         total_pages: @activities.total_pages
       }
     end
 
-    def find
-      @activities = policy_scope(resource_class).find(params[:ids])
-      authorize Activity
-
-      render json: @activities, root: root
+    def filter
+      @activities = policy_scope(resource_class).in(@filter)
+      authorize @activities
+      render json: @activities
     end
 
     def show
       authorize @activity
-      render json: @activity, root: root
+      render json: @activity
     end
 
     def create
+      binding.pry
       @activity = policy_scope(resource_class).new create_params
       authorize @activity
       @activity.save!
-      render json: @activity, root: root, status: :created
+      render json: @activity, status: :created
     end
 
     def update
       authorize @activity
       @activity.update! update_params
-      render json: @activity, root: root
+      render json: @activity
     end
 
     def destroy
       authorize @activity
       @activity.destroy!
-      render json: {}, status: :accepted
+      head :no_content
     end
 
     private
