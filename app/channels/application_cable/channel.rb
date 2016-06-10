@@ -9,16 +9,14 @@ module ApplicationCable
       message = message.symbolize_keys
       return message if message[:action] == 'destroy'
 
-      puts "seri1"
-
       resource_class = message[:type].constantize
       resource = Pundit.policy_scope(current_user, resource_class).find(message[:id])
       return unless resource.present?
-      puts current_user['id']
-      puts "ser2"
+
+      puts "Before serialization"
 
       serialization = ActiveModelSerializers::SerializableResource.new(resource, scope: current_user)
-      puts "seri!!"
+      puts "After serialization"
       message.merge({
         payload: serialization.as_json
       })
@@ -26,9 +24,6 @@ module ApplicationCable
 
     def stream_resource_updates_from(topic)
       stream_from topic, coder: ActiveSupport::JSON do |message|
-        # binding.pry
-        # puts message
-        # transmit(message)
         transmit(map_to_resource_update(message))
       end
     end
