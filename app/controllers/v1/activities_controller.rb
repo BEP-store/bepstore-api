@@ -30,7 +30,6 @@ module V1
     end
 
     def create
-      binding.pry
       @activity = policy_scope(resource_class).new create_params
       authorize @activity
       @activity.save!
@@ -52,7 +51,9 @@ module V1
     private
 
     def create_params
-      permitted_attributes(resource_class).merge(
+      params.require(:data)
+          .require(:attributes)
+          .permit(policy(resource_class).permitted_attributes).merge(
         user: current_user
       )
     end
