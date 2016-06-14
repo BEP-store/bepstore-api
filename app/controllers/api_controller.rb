@@ -2,10 +2,12 @@ class ApiController < ApplicationController
   include Pundit
   include ApiHelper
   include UsersHelper
+  include FilterHelper
 
   before_action :signed_in_user
   after_action :verify_policy_scoped, except: :create
   after_action :verify_authorized
+  before_action :set_filter, only: :filter
 
   rescue_from Pundit::NotAuthorizedError, with: :rescue_from_not_authorized
   rescue_from Pundit::NotDefinedError, with: :rescue_from_not_defined

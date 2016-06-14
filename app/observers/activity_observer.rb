@@ -6,19 +6,15 @@ class ActivityObserver < Mongoid::Observer
   # end
 
   def after_create(activity)
-    ActionCable.server.broadcast("goal_#{activity.id}", {
-      action: 'create',
-      id: activity.id,
-      type: activity._type
-    })
+    ActionCable.server.broadcast("goal_#{activity.id}", action: 'create',
+                                                        id: activity.id,
+                                                        type: activity._type)
   end
 
   def after_update(activity)
-    ActionCable.server.broadcast("goals", {
-      action: 'update',
-      id: activity.id,
-      type: activity._type
-    })
+    ActionCable.server.broadcast('goals', action: 'update',
+                                          id: activity.id,
+                                          type: activity._type)
   end
 
   def after_destroy(activity)

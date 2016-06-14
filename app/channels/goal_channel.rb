@@ -17,7 +17,7 @@ class GoalChannel < ApplicationCable::Channel
   end
 
   def subscribed
-    stream_resource_updates_from "goals"
+    stream_resource_updates_from 'goals'
   end
 
   def unsubscribed
@@ -25,6 +25,6 @@ class GoalChannel < ApplicationCable::Channel
   end
 
   def create(obj)
-    Goal.create! :title=>obj.title, :description=>"A desc", :status=>"pending"
+    Goal.create! title: obj.title, description: 'A desc', status: 'pending'
   end
 end

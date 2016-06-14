@@ -17,23 +17,23 @@ RSpec.describe V1::ActivitiesController, type: :controller do
     describe 'should return the activities' do
        before { action.call }
 
-       it { expect(JSON.parse(response.body)['activities'][0]['id']).to eq(activity2.id.to_s) }
-       it { expect(JSON.parse(response.body)['activities'][1]['id']).to eq(activity.id.to_s) }
+       it { expect(JSON.parse(response.body, symbolize_names: true)[:data][0][:id]).to eq(activity2.id.to_s) }
+       it { expect(JSON.parse(response.body, symbolize_names: true)[:data][1][:id]).to eq(activity.id.to_s) }
     end
   end
 
-  describe 'GET #find' do
+  describe 'GET #filter' do
     let(:action) do
       proc do
-        get :find, params: { ids: [activity.id, activity2.id] }
+        get :filter, params: { filter: { id: "#{activity.id},#{activity2.id}" } }
       end
     end
 
     describe 'when enrolled' do
         before { action.call }
 
-        it { expect(JSON.parse(response.body)['activities'][0]['id']).to eq(activity.id.to_s) }
-        it { expect(JSON.parse(response.body)['activities'][1]['id']).to eq(activity2.id.to_s) }
+        it { expect(JSON.parse(response.body, symbolize_names: true)[:data][0][:id]).to eq(activity.id.to_s) }
+        it { expect(JSON.parse(response.body, symbolize_names: true)[:data][1][:id]).to eq(activity2.id.to_s) }
     end
 
     describe 'when not enrolled' do
@@ -52,7 +52,7 @@ RSpec.describe V1::ActivitiesController, type: :controller do
       describe 'should return the activity' do
         before { action.call }
 
-        it { expect(JSON.parse(response.body)['activity']['id']).to eq(activity2.id.to_s) }
+        it { expect(JSON.parse(response.body, symbolize_names: true)[:data][:id]).to eq(activity2.id.to_s) }
       end
     end
   end

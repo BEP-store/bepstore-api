@@ -23,12 +23,8 @@ class ActivityPolicy < ApplicationPolicy
     record.user == user
   end
 
-  def permitted_attributes_for_create
-    [:engine, :created_at, :updated_at]
-  end
-
   def permitted_attributes
-    [:engine, :created_at, :updated_at, :data, :goal, :type]
+    [:id, :type, :created_at, :engine]
   end
 
   class Scope < Scope
