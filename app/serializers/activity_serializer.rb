@@ -6,6 +6,7 @@ class ActivitySerializer < ActiveModel::Serializer
   has_many :children
 
   def type
-    object._type.underscore.dasherize
+    # binding.pry
+    object._type.underscore #.dasherize
   end
 end
