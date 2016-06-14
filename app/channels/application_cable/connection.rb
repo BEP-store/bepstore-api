@@ -9,11 +9,11 @@ module ApplicationCable
     alias the_current_user current_user
 
     def on_error(error)
-      logger.fatal error
+      puts error
     end
 
     def new_tagged_logger
-      Log4r::Logger.new('Cable Log')
+      Logger.new(STDOUT)
     end
   end
 end

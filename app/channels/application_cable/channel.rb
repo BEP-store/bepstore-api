@@ -9,7 +9,7 @@ module ApplicationCable
       message = message.symbolize_keys
       return message if message[:action] == 'destroy'
 
-      resource_class = message[:_type].constantize
+      resource_class = message[:type].constantize
       resource = Pundit.policy_scope(current_user, resource_class).find(message[:id])
       return unless resource.present?
 
