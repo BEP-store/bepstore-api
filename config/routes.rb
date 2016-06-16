@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # keep this on top
-  # match '/websocket', to: ActionCable.server, via: [:get, :post]
+  mount ActionCable.server => '/cable'
 
   namespace :v1, except: [:new, :edit], format: :json do
     get :activities, to: 'activities#filter', constraints: ->(request) { request.params.key? :filter }
@@ -19,6 +19,4 @@ Rails.application.routes.draw do
   end
 
   root to: redirect { Rails.application.config_for(:app)[:ui_url] }
-
-  # mount ActionCable.server => '/cable'
 end

@@ -73,4 +73,7 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_cable.url = 'ws://localhost:' + Rack::Server.new.options[:Port].to_s + '/cable'
+  config.action_cable.allowed_request_origins = [%r{^(https?:\/\/(?:.+\.)?feedbackfruits\.com(?::\d{1,5})?)}]
 end
