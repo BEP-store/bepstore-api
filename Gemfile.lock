@@ -357,6 +357,7 @@ DEPENDENCIES
   rails-observers!
   rails_12factor
   redcarpet
+  redis
   responders (~> 2.1)
   rspec-instafail
   rspec-rails (~> 3.5.0.beta4)

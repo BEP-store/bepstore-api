@@ -26,6 +26,7 @@ gem 'date_validator'
 gem 'pundit'
 gem 'jwt', '~> 1.5.4'
 gem 'httparty'
+gem 'redis'
 
 gem 'bepstore-goals', fbf_engine: 'bepstore-api-goals', branch: 'master'
 
