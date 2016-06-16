@@ -27,7 +27,7 @@ gem 'pundit'
 gem 'jwt', '~> 1.5.4'
 gem 'httparty'
 
-gem 'bepstore-goals', fbf_engine: 'bepstore-api-goals', branch: 'feature/json'
+gem 'bepstore-goals', fbf_engine: 'bepstore-api-goals', branch: 'master'
 
 group :development do
   gem 'web-console', '~> 3.0'
