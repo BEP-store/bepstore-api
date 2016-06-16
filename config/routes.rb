@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # keep this on top
-  mount ActionCable.server => '/cable'
+  match '/cable', to: ActionCable.server, via: [:get, :post]
+  # mount ActionCable.server => '/cable'
 
   namespace :v1, except: [:new, :edit], format: :json do
     get :activities, to: 'activities#filter', constraints: ->(request) { request.params.key? :filter }
