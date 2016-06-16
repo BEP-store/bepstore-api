@@ -3,6 +3,7 @@
 {<img src="https://circleci.com/gh/feedbackfruits/bepstore-api.svg?style=shield" alt="Circle CI" />}[https://circleci.com/gh/feedbackfruits/bepstore-api]
 {<img src="https://codecov.io/gh/feedbackfruits/bepstore-api/branch/master/graph/badge.svg" alt="Codecov" />}[https://codecov.io/gh/feedbackfruits/bepstore-api]
 {<img src="https://codeclimate.com/github/feedbackfruits/bepstore-api/badges/gpa.svg?badge.svg" alt="CodeClimate" />}[https://codeclimate.com/github/feedbackfruits/bepstore-api]
+{<img src="https://gemnasium.com/feedbackfruits/bepstore-api.svg?badge.svg" alt="Dependencies" />}[https://gemnasium.com/feedbackfruits/bepstore-api]
 
 {<img src="https://badge.waffle.io/feedbackfruits/bepstore-api.svg?label=ready&title=Ready" alt="Ready" />}[https://waffle.io/feedbackfruits/bepstore-api]
 {<img src="https://badge.waffle.io/feedbackfruits/bepstore-api.svg?label=in%20progress&title=In%20Progress" alt="In Progress" />}[https://waffle.io/feedbackfruits/bepstore-api]
