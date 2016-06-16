@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # keep this on top
-  match '/cable', to: ActionCable.server, via: [:get, :post]
+  match '/cable', to: ActionCable.server, via: [:get, :post, :options]
   # mount ActionCable.server => '/cable'
 
   namespace :v1, except: [:new, :edit], format: :json do
