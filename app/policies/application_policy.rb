@@ -6,6 +6,10 @@ class ApplicationPolicy
     @record = record
   end
 
+  def permitted_attributes
+    []
+  end
+
   class Scope
     attr_reader :user, :scope
 

@@ -4,6 +4,13 @@ shared_examples_for 'ActivitiesController' do
   let!(:activity) { FactoryGirl.create(:activity) }
   let!(:activity2) { FactoryGirl.create(:activity) }
 
+  let!(:data) do
+    {
+      attributes: attributes,
+      relationships: relationships
+    }
+  end
+
   describe 'GET #index' do
     let(:action) do
       proc do
@@ -12,10 +19,10 @@ shared_examples_for 'ActivitiesController' do
     end
   end
 
-  describe 'GET #find' do
+  describe 'GET #filter' do
     let(:action) do
       proc do
-        get :find, ids: [activity.id, activity2.id]
+        get :filter, params: { filter: { id: "#{activity.id},#{activity2.id}" } }
       end
     end
   end
@@ -23,7 +30,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'GET #show' do
     let(:action) do
       proc do
-        get :show, id: activity2.id
+        get :show, params: { id: activity2.id }
       end
     end
   end
@@ -31,7 +38,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'POST #create' do
     let(:action) do
       proc do
-        post :create, type => params
+        post :create, params: { data: data }
       end
     end
   end
@@ -39,7 +46,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'PUT #update' do
       let(:action) do
         proc do
-          put :update, id: activity.id, type => params
+          put :update, params: { id: activity.id, type => params }
         end
       end
   end
@@ -47,7 +54,7 @@ shared_examples_for 'ActivitiesController' do
   describe 'DELETE #destroy' do
       let(:action) do
         proc do
-          delete :destroy, id: activity.id
+          delete :destroy, params: { id: activity.id }
         end
       end
   end

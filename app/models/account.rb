@@ -1,5 +1,4 @@
 class Account < ActiveResource::Base
-  include ActiveModel::SerializerSupport
   extend JwtHelper
 
   self.site = Rails.application.config_for(:app)[:accounts_url]

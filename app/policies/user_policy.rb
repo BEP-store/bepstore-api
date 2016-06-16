@@ -1,5 +1,5 @@
 class UserPolicy < ApplicationPolicy
-  def find?
+  def filter?
     true
   end
 

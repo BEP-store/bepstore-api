@@ -4,10 +4,10 @@ module V1
     before_action :find_user, only: [:show, :update, :destroy]
     skip_after_action :verify_policy_scoped, only: :current
 
-    def find
-      @users = policy_scope(User).find(params[:ids])
-      authorize User
-      render json: @users
+    def filter
+      @activities = policy_scope(resource_class).in(@filter)
+      authorize @activities
+      render json: @activities
     end
 
     def show
