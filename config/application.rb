@@ -31,7 +31,7 @@ module BEPStore
     config.generators.helper = false
 
     # Use custom error messages
-    config.exceptions_app = self.routes
+    config.exceptions_app = routes
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
