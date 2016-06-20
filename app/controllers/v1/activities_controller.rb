@@ -2,6 +2,7 @@ module V1
   class ActivitiesController < ApiController
     include PaginationHelper
 
+    skip_before_action :signed_in_user, only: [:index, :filter, :show]
     before_action :find_activity, only: [:show, :update, :destroy]
 
     def index
