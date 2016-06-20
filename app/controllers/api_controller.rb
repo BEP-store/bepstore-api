@@ -4,7 +4,7 @@ class ApiController < ApplicationController
   include UsersHelper
   include FilterHelper
 
-  before_action :signed_in_user, except: [:index, :show]
+  before_action :signed_in_user
   after_action :verify_policy_scoped, except: :create
   after_action :verify_authorized
   before_action :set_filter, only: :filter
