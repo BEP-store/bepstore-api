@@ -15,7 +15,7 @@ module V1
         page: page,
         per_page: per_page,
         total_pages: @activities.total_pages
-      }
+      }, include: included_relationships
     end
 
     def filter
@@ -52,6 +52,10 @@ module V1
 
     def level_params
       ActiveModelSerializers::Deserialization.jsonapi_parse(params)
+    end
+
+    def included_relationships
+      []
     end
 
     def create_params
