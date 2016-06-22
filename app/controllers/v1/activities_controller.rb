@@ -38,7 +38,7 @@ module V1
 
     def update
       authorize @activity
-      @activity.update! level_params
+      @activity.update! update_params
       render json: @activity
     end
 
