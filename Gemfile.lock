@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:feedbackfruits/bepstore-api-goals.git
-  revision: 46292965b769beddb720f5007b5c34e9ad79184d
+  revision: 0345e0275f7407387ff700716d929d5f3a0be69e
   branch: master
   specs:
     bepstore-goals (0.3.0)
